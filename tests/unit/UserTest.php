@@ -31,4 +31,27 @@ class UserTest extends \PHPUnit\Framework\TestCase {
 
 		$this->assertEquals( $user->getFullName(), 'Billy Behera' );
 	}
+
+	public function testThatWeCanGetTheTrimmedFirstNameAndLastName() {
+
+		$user = new \App\Model\User;
+
+		$user->setFirstName( '            Billy' );
+
+		$user->setLastName( 'Behera              ' );
+
+		$this->assertEquals($user->getFullName(), 'Billy Behera');
+
+	}
+
+	public function testGetTheEmail(){
+
+		$user = new \App\Model\User;
+
+		$user->setEmail('priyanka@multidots.com');
+
+		$this->assertEquals($user->getEmail(), 'priyanka@multidots.com');
+	}
+
+
 }
