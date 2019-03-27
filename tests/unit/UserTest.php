@@ -2,13 +2,22 @@
 
 class UserTest extends \PHPUnit\Framework\TestCase {
 
-	public function testThatWeCanGetTheFirstName() {
+	protected $user;
 
-		$user = new \App\Model\User;
+	public function setUp(){
+		$this->user =  new \App\Model\User;
+	}
 
-		$user->setFirstName( "Billy" );
+	/**
+	 * @test
+	 */
+	public function get_the_first_name() {
 
-		$this->assertEquals( $user->getFirstName(), 'Billy' );
+
+
+		$this->user->setFirstName( "Billy" );
+
+		$this->assertEquals( $this->user->getFirstName(), 'Billy' );
 
 	}
 
@@ -52,6 +61,8 @@ class UserTest extends \PHPUnit\Framework\TestCase {
 
 		$this->assertEquals($user->getEmail(), 'priyanka@multidots.com');
 	}
+
+	
 
 
 }
