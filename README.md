@@ -18,33 +18,10 @@ create app folder
 create tests folder
 
 go to composer.json file
-{
-    "require": {
-        "phpunit/phpunit": "^6.5"
-    },
-    "autoload":{
-        "psr-4":{
-            "App\\":"app"
-        }
-    }
-}
 
 composer dump-autoload -o
 
 create phpunit.xml file in root
-
-<?xml version="1.0" encoding="UTF-8" ?>
-<phpunit bootstrap="vendor/autoload.php"
-         colors="true"
-         verbase="true"
-         stopOnFailure="false">
-    <testsuites>
-        <testsuite name="Test Suite">
-            <directory>tests</directory>
-        </testsuite>
-    </testsuites>
-
-</phpunit>
 
 now go to ./vendor/bin/phpunit 
 
